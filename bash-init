@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -L $0 ]; then
+    sh $(dirname $(readlink $0))/init
+    cat $(dirname $(readlink $0))/bashrc
+else
+    sh $(dirname $0)/init
+    cat $(dirname $0)/bashrc
+fi
